@@ -10,7 +10,7 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch('http://192.168.0.159:3000')
+    fetch(__API_URL__)
       .then(response => response.json())
       .then(data => {
         this.setState({ data })
