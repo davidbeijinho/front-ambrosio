@@ -38,6 +38,7 @@
     "react-dev-utils": "^5.0.2",
     "react-dom": "^16.5.2",
     "resolve": "1.6.0",
+    "serve": "^10.0.2",
     "style-loader": "0.19.0",
     "sw-precache-webpack-plugin": "0.11.4",
     "url-loader": "0.6.2",
@@ -62,7 +63,8 @@
     "pm2show": "pm2 show frontAmbrosio",
     "pm2list": "pm2 ls",
     "pm2deploy": "pm2 deploy production update",
-    "pm2deploy:setup": "pm2 deploy production setup"
+    "pm2deploy:setup": "pm2 deploy production setup",
+    "serve": "serve -s build"
   },
   "jest": {
     "collectCoverageFrom": [
