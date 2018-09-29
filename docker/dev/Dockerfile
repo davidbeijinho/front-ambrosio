@@ -14,4 +14,4 @@ COPY . .
 
 EXPOSE 9000
 
-CMD [ "npm", "run", "script", "startdocker" ]
+CMD [ "npm", "run", "startdocker" ]
