@@ -7,7 +7,4 @@ services:
     ports:
     - "9000:9000"
     volumes:
-    - data-volume:/data/app
-    - ./dockerData:/data/app
-volumes:
-  data-volume:
+    - ./://usr/src/app
