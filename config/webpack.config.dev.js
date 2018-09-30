@@ -244,7 +244,7 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
-      __API_URL__: '//192.168.0.159:3000',
+      __API_URL__: '//raspnomada.local:3000',
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.
