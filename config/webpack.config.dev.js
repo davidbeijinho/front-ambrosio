@@ -244,6 +244,9 @@ module.exports = {
     // You can remove this if you don't use Moment.js:
     new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/),
     new webpack.DefinePlugin({
+    // TODO config to point to local api localhost:3000
+    // config to point to remote api nomadarasp.ddns.net
+    // also keep this config
       __API_URL__: '//raspnomada.local:3000',
     }),
   ],
