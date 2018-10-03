@@ -1,12 +1,7 @@
 # Front Ambrosio
 
 ## TODO
-    - define API
-        - config for 
-            - maybe diffrente run script ? or env file ?
-            - local API
-            - for remote API
-
+    - .env for docker how?
     - https://github.com/storybooks/storybook
     - https://www.styled-components.com/
     - Redux
