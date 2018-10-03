@@ -11,14 +11,14 @@ class App extends Component {
   }
 
   componentDidMount() {
-    fetch(__API_URL__)
+    fetch(process.env.REACT_APP_API_URL)
       .then(response => response.json())
       .then(data => {
         this.setState({ status: data })
         console.log('Status info', data)
       });
 
-    fetch(__API_URL__ + '/api/sensor?filter[order]=id%20DESC&filter[limit]=3')
+    fetch(process.env.REACT_APP_API_URL + '/api/sensor?filter[order]=id%20DESC&filter[limit]=3')
       .then(response => response.json())
       .then(data => {
         this.setState({ sensor: data })
