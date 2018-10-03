@@ -30,7 +30,12 @@ class App extends Component {
     if (this.state.sensor && this.state.sensor.length) {
       return (
         <ul>
-          {this.state.sensor.map((values) => <li key={values.id}>Temperature: {values.temperature}</li>)}
+          {this.state.sensor.map((values) => <li key={values.id}>
+          <p>Temperature: {values.temperature}</p>
+            <ul>
+              <li>{values.id} | {values.created} </li>
+            </ul>
+          </li>)}
         </ul>
       )
     } else if (this.state.sensor) {
