@@ -18,7 +18,7 @@ class App extends Component {
         console.log('Status info', data)
       });
 
-      fetch(__API_URL__ + '/api/sensor?filter[order]=id%20DESC&filter[limit]=3')
+    fetch(__API_URL__ + '/api/sensor?filter[order]=id%20DESC&filter[limit]=3')
       .then(response => response.json())
       .then(data => {
         this.setState({ sensor: data })
@@ -27,28 +27,29 @@ class App extends Component {
   }
 
   getSensorInfo() {
-    if (this.state.info) {
+    if (this.state.sensor && this.state.sensor.length) {
       return (
         <ul>
-          <li>Started: {this.state.data.started}</li>
-          <li>Uptime: {this.state.data.uptime}</li>
+          {this.state.sensor.map((values) => <li key={values.id}>Temperature: {values.temperature}</li>)}
         </ul>
       )
+    } else if (this.state.sensor) {
+      return <p>No Sensor Information</p>
     } else {
-      return null
+      return <p>...Loading</p>
     }
   }
 
-  getStatus() {
-    if (this.state.info) {
+  getStatusInfo() {
+    if (this.state.status) {
       return (
         <ul>
-          <li>Started: {this.state.data.started}</li>
-          <li>Uptime: {this.state.data.uptime}</li>
+          <li>Started: {this.state.status.started}</li>
+          <li>Uptime: {this.state.status.uptime}</li>
         </ul>
       )
     } else {
-      return null
+      return <p>...Loading</p>
     }
   }
 
@@ -56,9 +57,9 @@ class App extends Component {
     console.log(this.state)
     return (
       <div>
-          <h1 className="App-title">Welcome to Ambrosio</h1>
-        {this.getStatus()}
-        <hr />  
+        <h1 className="App-title">Welcome to Ambrosio</h1>
+        {this.getStatusInfo()}
+        <hr />
         {this.getSensorInfo()}
       </div>
     );
