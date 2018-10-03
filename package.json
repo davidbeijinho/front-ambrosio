@@ -24,6 +24,7 @@
     "pm2delete": "pm2 delete frontAmbrosio",
     "pm2show": "pm2 show frontAmbrosio",
     "pm2list": "pm2 ls",
+    "pm2update": "pm2 update",
     "pm2deploy": "pm2 deploy production update",
     "pm2deploy:setup": "pm2 deploy production setup",
     "serve": "serve -s build"
