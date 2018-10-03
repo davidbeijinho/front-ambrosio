@@ -247,7 +247,7 @@ module.exports = {
     // TODO config to point to local api localhost:3000
     // config to point to remote api nomadarasp.ddns.net
     // also keep this config
-      __API_URL__: '//raspnomada.local:3000',
+      __API_URL__: '\'//raspnomada.local:3000\'',
     }),
   ],
   // Some libraries import Node modules but don't use them in the browser.

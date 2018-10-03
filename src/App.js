@@ -5,7 +5,8 @@ class App extends Component {
     super(props);
 
     this.state = {
-      data: null,
+      status: null,
+      sensor: null,
     };
   }
 
@@ -13,13 +14,33 @@ class App extends Component {
     fetch(__API_URL__)
       .then(response => response.json())
       .then(data => {
-        this.setState({ data })
-        console.log(data);
+        this.setState({ status: data })
+        console.log('Status info', data)
+      });
+
+      fetch(__API_URL__ + '/api/sensor?filter[order]=id%20DESC&filter[limit]=3')
+      .then(response => response.json())
+      .then(data => {
+        this.setState({ sensor: data })
+        console.log('Sensor info', data)
       });
   }
 
-  getInfo() {
-    if (this.state.data) {
+  getSensorInfo() {
+    if (this.state.info) {
+      return (
+        <ul>
+          <li>Started: {this.state.data.started}</li>
+          <li>Uptime: {this.state.data.uptime}</li>
+        </ul>
+      )
+    } else {
+      return null
+    }
+  }
+
+  getStatus() {
+    if (this.state.info) {
       return (
         <ul>
           <li>Started: {this.state.data.started}</li>
@@ -36,7 +57,9 @@ class App extends Component {
     return (
       <div>
           <h1 className="App-title">Welcome to Ambrosio</h1>
-        {this.getInfo()}
+        {this.getStatus()}
+        <hr />  
+        {this.getSensorInfo()}
       </div>
     );
   }
